@@ -10,7 +10,7 @@ pipeline {
 
             steps {
                 sleep 7
-                echo 'Hello world'
+                echo 'Hello world NEW'
             }
 
         }
