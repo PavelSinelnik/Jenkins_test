@@ -15,7 +15,7 @@ pipeline {
             }
             steps {
 
-                sh ' echo /'make/''
+                sh 'echo "make"'
 
             }
 
