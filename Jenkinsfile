@@ -1,11 +1,8 @@
 pipeline {
     agent {
-
-        node {
             label 'Android'
-
         }
-    }
+
 
     stages {
 
