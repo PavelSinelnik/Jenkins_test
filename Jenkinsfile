@@ -11,11 +11,13 @@ pipeline {
 
             steps {
                 echo "hello"
+                node {
+    powershell 'Write-Output "Hello, World!"'
+}
             }
 
         }
+
     }
-    node {
-    powershell '''Get-Location'''
-    }
+
 }
