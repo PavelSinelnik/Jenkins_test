@@ -2,7 +2,7 @@ pipeline {
     agent {
 
         node {
-            label 'iOSVirt'
+            label 'Android'
 
         }
     }
@@ -10,11 +10,9 @@ pipeline {
     stages {
 
         stage('to run on BBB') {
-            agent {
-                label 'iOSVirt'
-            }
+
             steps {
-                sh 'echo "make"'
+                echo 'Hello world'
             }
 
         }
