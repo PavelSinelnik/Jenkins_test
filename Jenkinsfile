@@ -9,9 +9,9 @@ pipeline {
 
         stage('to run on BBB') {
 
-            node {
-    powershell 'Get-Location'
-}
+            steps {
+                sh('Get-Location')
+            }
 
         }
     }
