@@ -10,7 +10,8 @@ pipeline {
 
             steps {
                 sleep 7
-                echo 'Hello world NEW'
+                powershell ("""Get-Childitem""")
+                powershell ("""Get-Location""")
             }
 
         }
