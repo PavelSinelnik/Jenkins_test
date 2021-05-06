@@ -10,7 +10,7 @@ pipeline {
         stage('to run on BBB') {
 
             steps {
-                sh('Get-Location')
+                powershell 'mkdir a'
             }
 
         }
