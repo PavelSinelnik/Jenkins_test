@@ -12,6 +12,7 @@ pipeline {
             steps {
                 script {
                 powershell """Get-Location"""
+                }
 
             }
 
