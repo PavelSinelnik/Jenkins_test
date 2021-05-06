@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 pipeline {
     agent {
             label 'Android'
@@ -9,7 +10,7 @@ pipeline {
         stage('to run on BBB') {
 
             steps {
-                Get-Location
+                powershell "Get-Location"
             }
 
         }
