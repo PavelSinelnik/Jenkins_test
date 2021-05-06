@@ -2,7 +2,7 @@ pipeline {
     agent {
 
         node {
-            label 'Android'
+            label 'iOSVirt'
 
         }
     }
@@ -11,7 +11,7 @@ pipeline {
 
         stage('to run on BBB') {
             agent {
-                label 'Android'
+                label 'iOSVirt'
             }
             steps {
 
