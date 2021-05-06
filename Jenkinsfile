@@ -10,8 +10,8 @@ pipeline {
 
             steps {
                 sleep 7
-                powerShell ("""Get-Childitem""")
-                powerShell ("""Get-Location""")
+                powershell("Get-Childitem")
+                powershell("Get-Location")
             }
 
         }
