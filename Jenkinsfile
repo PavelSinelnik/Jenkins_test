@@ -14,10 +14,9 @@ pipeline {
                 label 'iOSVirt'
             }
             steps {
-
                 sh 'echo "make"'
-
             }
 
         }
     }
+}
