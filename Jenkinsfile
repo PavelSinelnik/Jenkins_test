@@ -9,7 +9,7 @@ pipeline {
         stage('to run on BBB') {
 
             steps {
-                echo "hello"
+                Get-Location
             }
 
         }
