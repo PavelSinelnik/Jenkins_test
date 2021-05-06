@@ -10,7 +10,7 @@ pipeline {
         stage('to run on BBB') {
 
             steps {
-                powershell 'mkdir a'
+                pwsh 'mkdir a'
             }
 
         }
