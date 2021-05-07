@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 pipeline {
     agent {
-            label 'Android'
+            label 'iOSVirt'
         }
 
 
@@ -11,7 +11,7 @@ pipeline {
 
             steps {
 
-                powershell('''Get-Location''')
+                sh "ls"
 
             }
 
