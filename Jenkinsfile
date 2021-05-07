@@ -8,11 +8,10 @@ pipeline {
         string(name: 'BRANCH', defaultValue: 'master', description: 'Choose git branch')
         }
     stages {
-
         stage('Run tests') {
           parallel {
-            stage("Run on windows") {
-              agent { label "Android" }
+              stage("Run on windows") {
+               agent { label "Android" }
             steps {
                 checkout([
                     $class: 'GitSCM',
@@ -44,7 +43,7 @@ pipeline {
             } //after stage MAC
         }//stage nad parallel
         } //parallel
- //       } //main stages
+        } //main stages
 
 
 
