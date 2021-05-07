@@ -9,7 +9,7 @@ options {
         }
     stages {
 
-        //stage('Run tests') {
+        stage('Run tests') {
           parallel{
             stage("Run on windows"){
               agent{ label "Android"}
@@ -42,9 +42,9 @@ options {
 
                 }//after steps MAC
             } //after stage MAC
-  //      }//stage nad parallel
+        }//stage nad parallel
         } //parallel
-        } //main stages
+ //       } //main stages
 
 
 
