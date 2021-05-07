@@ -5,6 +5,7 @@ pipeline {
         }
         parameters {
         string(name: 'BRANCH', defaultValue: 'master', description: 'Choose git branch')
+        }
     stages {
 
         stage('Code Checkout') {
