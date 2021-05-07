@@ -4,7 +4,7 @@ options {
     buildDiscarder(logRotator(numToKeepStr: '30'))
   }
     agent {
-            label 'iOSVirt'
+            label 'Android'
         }
         parameters {
         string(name: 'BRANCH', defaultValue: 'master', description: 'Choose git branch')
@@ -24,9 +24,13 @@ options {
 
         stage('ls repo') {
             steps {
-                sh '''name="$(cat name.txt)"
-                echo "hello $name"
-                '''
+//                sh '''name="$(cat name.txt)"
+//                echo "hello $name"
+//                '''
+                   bat '''
+                   ECHO HELLO WORLD
+                   PAUSE
+                   '''
             }
         }
     }
