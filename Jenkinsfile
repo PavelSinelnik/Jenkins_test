@@ -1,5 +1,8 @@
 #!/usr/bin/env groovy
 pipeline {
+options {
+    buildDiscarder(logRotator(numToKeepStr: '30'))
+  }
     agent {
             label 'iOSVirt'
         }
@@ -21,8 +24,7 @@ pipeline {
 
         stage('ls repo') {
             steps {
-                sh "echo 'hello'"
-                sh "ls"
+                sh "echo 'hello `cat name.txt`'"
             }
         }
     }
