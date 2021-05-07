@@ -9,7 +9,7 @@ options {
         }
     stages {
 
-        stage('Run tests') {
+        //stage('Run tests') {
           parallel{
             stage("Run on windows"){
               agent{ label "Android"}
