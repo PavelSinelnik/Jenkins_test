@@ -3,9 +3,7 @@ pipeline {
 options {
     buildDiscarder(logRotator(numToKeepStr: '30'))
   }
-    agent {
-            label 'Android'
-        }
+    agent any
         parameters {
         string(name: 'BRANCH', defaultValue: 'master', description: 'Choose git branch')
         }
