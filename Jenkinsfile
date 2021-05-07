@@ -11,27 +11,53 @@ options {
         }
     stages {
 
-        stage('Code Checkout') {
+        stage('Run tests') {
+          parallel{
+            stage("Run on windows"){
+              agent{ label "Android"}
             steps {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: '${BRANCH}']],
                     userRemoteConfigs: [[url: 'https://github.com/PavelSinelnik/Jenkins_test.git']]
                 ])
+                bat '''
+                  ECHO hello world
+                  PAUSE
+                '''
             }
-        }
 
 
-        stage('ls repo') {
-            steps {
+            } //stage after parallel
+            stage("Run on Mac"){
+                agent { label "iOSVirt"}
+                steps{
+
+                   checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '${BRANCH}']],
+                    userRemoteConfigs: [[url: 'https://github.com/PavelSinelnik/Jenkins_test.git']]
+                    ])
+                    sh '''name="$(cat name.txt)"
+                    echo "hello $name"
+                    '''
+
+                }//after steps MAC
+            } //after stage MAC
+        }//stage nad parallel
+        } //parallel
+        } //main stages
+
+
+
+//        stage('ls repo') {
+//            steps {
 //                sh '''name="$(cat name.txt)"
 //                echo "hello $name"
 //                '''
-                   bat '''
-                   ECHO HELLO WORLD
-                   PAUSE
-                   '''
-            }
-        }
-    }
+//                   bat '''
+ //                  ECHO HELLO WORLD
+ //                  PAUSE
+  //                 '''
+
 }
