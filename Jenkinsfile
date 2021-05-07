@@ -24,8 +24,9 @@ options {
 
         stage('ls repo') {
             steps {
-                sh "name= $(cat name.txt)"
-                sh "echo $name"
+                sh '''name= $(cat name.txt)
+                echo $name
+                '''
             }
         }
     }
