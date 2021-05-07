@@ -24,7 +24,7 @@ options {
 
         stage('ls repo') {
             steps {
-                sh echo 'hello `cat name.txt`'
+                sh "echo 'hello \`cat name.txt\`'"
             }
         }
     }
