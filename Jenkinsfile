@@ -3,7 +3,7 @@ pipeline {
 options {
     buildDiscarder(logRotator(numToKeepStr: '30'))
   }
-    agent any
+    agent none
         parameters {
         string(name: 'BRANCH', defaultValue: 'master', description: 'Choose git branch')
         }
