@@ -1,18 +1,18 @@
 #!/usr/bin/env groovy
 pipeline {
-options {
-    buildDiscarder(logRotator(numToKeepStr: '30'))
+    options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
   }
     agent none
-        parameters {
+    parameters {
         string(name: 'BRANCH', defaultValue: 'master', description: 'Choose git branch')
         }
     stages {
 
         stage('Run tests') {
-          parallel{
-            stage("Run on windows"){
-              agent{ label "Android"}
+          parallel {
+            stage("Run on windows") {
+              agent { label "Android" }
             steps {
                 checkout([
                     $class: 'GitSCM',
