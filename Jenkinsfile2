@@ -47,6 +47,7 @@ pipeline {
                     subject: "[Jenkins][SUCCESS] '${JOB_NAME} [${BUILD_NUMBER}]'",
                     body: '''
                     <p>Build '${JOB_NAME} [${BUILD_NUMBER}]': was successfull</p>
+                     <p>URL &QUOT;<a href='${BUILD_URL}'>${JOB_NAME} [${BUILD_NUMBER}]</a>&QUOT;</p>
                     ''',
                     to: 'pavel.sinelnik@regula.by',
                     recipientProviders: [requestor()],
