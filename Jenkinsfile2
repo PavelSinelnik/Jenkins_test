@@ -49,33 +49,31 @@ pipeline {
                     Build '${JOB_NAME} [${BUILD_NUMBER}]': was successfull                   
                     ''',
                     to: 'pavel.sinelnik@regula.by',
-                    recipientProviders: [requestor()],
+                    //recipientProviders: [requestor()],
                     mimeType: 'text/html'
-                )
+            )
         }
         failure {
             emailext (
                     subject: "[Jenkins][FAILED] '${JOB_NAME} [${BUILD_NUMBER}]'",
                     body: '''
-                    <p>Build '${JOB_NAME} [${BUILD_NUMBER}]': failed</p>
-                    <p>URL &QUOT;<a href='${BUILD_URL}'>${JOB_NAME} [${BUILD_NUMBER}]</a>&QUOT;</p>
+                    Build '${JOB_NAME} [${BUILD_NUMBER}]': failed                  
                     ''',
                     to: 'pavel.sinelnik@regula.by',
                     recipientProviders: [requestor()],
                     mimeType: 'text/html'
-                )
+            )
         }
         aborted {
             emailext (
                     subject: "[Jenkins][ABORTED] '${JOB_NAME} [${BUILD_NUMBER}]'",
                     body: '''
-                    <p>Build '${JOB_NAME} [${BUILD_NUMBER}]': was aborted</p>
-                    <p>URL &QUOT;<a href='${BUILD_URL}'>${JOB_NAME} [${BUILD_NUMBER}]</a>&QUOT;</p>
+                    Build '${JOB_NAME} [${BUILD_NUMBER}]': was aborted
                     ''',
                     to: 'pavel.sinelnik@regula.by',
                     recipientProviders: [requestor()],
                     mimeType: 'text/html'
-                )
+            )
         }
         
     } 
