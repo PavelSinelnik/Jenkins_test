@@ -20,7 +20,7 @@ pipeline {
                         ])
                         bat '''
                         set /P Variable=<%cd%\\name.txt
-                        echo %Variable%
+                        echo hello %Variable%
                         PAUSE                       
                         '''
                     }
