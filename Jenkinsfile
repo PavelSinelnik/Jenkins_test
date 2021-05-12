@@ -25,9 +25,9 @@ pipeline {
                         sh '''name="$(cat name.txt)"
                         echo "hello $name"
                         '''
-                    }//after steps MAC
-                } //after stage MAC
-            }//stage nad parallel
-        } //parallel
-    } //main stages
+                    }
+                } 
+            }
+        } 
+    } 
 }
