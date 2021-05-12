@@ -19,7 +19,8 @@ pipeline {
                             userRemoteConfigs: [[url: 'https://github.com/PavelSinelnik/Jenkins_test.git']]
                         ])
                         bat '''
-                        ECHO hello world
+                        set /P Variable=<%cd%\name.txt
+                        echo %Variable%
                         PAUSE                       
                         '''
                     }
