@@ -46,7 +46,7 @@ pipeline {
             emailext (
                     subject: "[Jenkins][SUCCESS] '${JOB_NAME} [${BUILD_NUMBER}]'",
                     body: '''
-                    Build '${JOB_NAME} [${BUILD_NUMBER}]': was successfull
+                    <p>Build '${JOB_NAME} [${BUILD_NUMBER}]': was successfull</p>
                     ''',
                     to: 'pavel.sinelnik@regula.by',
                     recipientProviders: [requestor()],
