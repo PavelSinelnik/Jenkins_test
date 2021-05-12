@@ -6,6 +6,7 @@ pipeline {
     agent none
     parameters {
         string(name: 'BRANCH', defaultValue: 'master', description: 'Choose git branch')
+        string(name: 'MAIL', defaultValue: 'pavel.sinelnik@regula.by', description: 'Choose mail address')
     }
     stages {
         stage('Run tests') {
@@ -48,7 +49,7 @@ pipeline {
                     body: '''
                     Build '${JOB_NAME} [${BUILD_NUMBER}]': was successfull                   
                     ''',
-                    to: 'pavel.sinelnik@regula.by',
+                    to: '${MAIL}',
                     mimeType: 'text/html'
             )
         }
@@ -58,7 +59,7 @@ pipeline {
                     body: '''
                     Build '${JOB_NAME} [${BUILD_NUMBER}]': failed                  
                     ''',
-                    to: 'pavel.sinelnik@regula.by',
+                    to: '${MAIL}',
                     mimeType: 'text/html'
             )
         }
@@ -68,7 +69,7 @@ pipeline {
                     body: '''
                     Build '${JOB_NAME} [${BUILD_NUMBER}]': was aborted
                     ''',
-                    to: 'pavel.sinelnik@regula.by',
+                    to: '${MAIL}',
                     mimeType: 'text/html'
             )
         }
