@@ -16,7 +16,6 @@ pipeline {
         stage('Run tests') {
             parallel {
                 stage("Run on Mac"){
-                    agent { label "jnlp" }
                     steps {
                         checkout([
                             $class: 'GitSCM',
